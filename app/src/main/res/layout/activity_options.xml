@@ -21,7 +21,7 @@
         android:id="@+id/click"
         android:layout_width="wrap_content"
         android:layout_height="58dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="40dp"
         android:background="@color/colorAccent"
         android:clickable="false"
@@ -41,9 +41,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_marginTop="80dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp">
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/button"
@@ -89,8 +89,8 @@
             android:id="@+id/imageView2"
             android:layout_width="304dp"
             android:layout_height="250dp"
-            android:layout_marginLeft="80px"
-            android:layout_marginTop="40px"
+            android:layout_marginLeft="100px"
+            android:layout_marginTop="100px"
             app:srcCompat="@drawable/warehouse"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="176dp" />
