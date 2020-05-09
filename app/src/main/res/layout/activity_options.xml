@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Options"
+    >
+
+    <TextView
+        android:id="@+id/nameview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="6dp"
+        />
+
+    <EditText
+        android:id="@+id/click"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/colorAccent"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:fontFamily="@font/mukta_vaani_medium"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:text="Click to Select !"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/nameview"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:text="List of items"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="176dp" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:layout_marginBottom="20px"
+            android:background="#000000"
+            android:text="Check Status"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:text="add frieght"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="-16dp"
+            tools:layout_editor_absoluteY="308dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="304dp"
+            android:layout_height="250dp"
+            android:layout_marginLeft="80px"
+            android:layout_marginTop="40px"
+            app:srcCompat="@drawable/warehouse"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="176dp" />
+    </LinearLayout>
+
+</LinearLayout>

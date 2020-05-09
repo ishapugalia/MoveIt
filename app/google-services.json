@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1073932418034",
+    "firebase_url": "https://freight-management-final-6bbe8.firebaseio.com",
+    "project_id": "freight-management-final-6bbe8",
+    "storage_bucket": "freight-management-final-6bbe8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073932418034:android:3b756c35df111e0170896b",
+        "android_client_info": {
+          "package_name": "com.example.fm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073932418034-hgjt03q88smfvoktntforectpva4v21u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuHCtag42lAWPXafDn20WTS3h3tQ6in6Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073932418034-hgjt03q88smfvoktntforectpva4v21u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
