@@ -9,11 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name=".Goods"
-            android:label="@string/title_activity_goods"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
         <activity android:name=".Newgoods" />
         <activity android:name=".Options" />
         <activity android:name=".Signup" />

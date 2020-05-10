@@ -122,8 +122,8 @@
             android:layout_height="match_parent"
             android:text="Fragile?"
             android:textSize="15sp"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="15sp" />
+            android:layout_marginRight="270dp"
+            android:textColor="@color/cardview_dark_background" />
 
     </LinearLayout>
 
@@ -132,11 +132,10 @@
         android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="50dp"
         android:background="#000"
-        android:onClick="addGoods"
         android:text="ADD"
-        android:textColor="#fff"
-        android:layout_margin="50dp"/>
+        android:textColor="#fff" />
 
 
 </LinearLayout>
