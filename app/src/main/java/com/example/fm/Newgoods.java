@@ -68,20 +68,8 @@ public class Newgoods extends AppCompatActivity {
         }
 
         ownerid = mAuth.getCurrentUser().getUid();
-
-
-         register.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 Goods newg= new Goods(productName,type,pieces,boxes,weight,fragile);
-                 colref.document(ownerid).collection("Goods").add(newg);
-
-             }
-         });
-
-
-
-
+        Goods newg= new Goods(productName,type,pieces,boxes,weight,fragile);
+        colref.document(ownerid).collection("Goods").add(newg);
 
     }
 }

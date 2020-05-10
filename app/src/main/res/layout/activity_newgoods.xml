@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Signup"
+    tools:context=".Newgoods"
     android:orientation="vertical"
     android:padding="18dp"
     android:background="#60FBFF">
@@ -134,6 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
         android:background="#000"
+        android:onClick="addGoods"
         android:text="ADD"
         android:textColor="#fff" />
 
