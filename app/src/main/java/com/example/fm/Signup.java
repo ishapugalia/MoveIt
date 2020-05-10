@@ -80,8 +80,8 @@ public class Signup extends AppCompatActivity {
                 editPassword.requestFocus();
                 return;
             }
-            if (password.length() < 6) {
-                editPassword.setError("Password is too short!");
+            if (password.length()!=8) {
+                editPassword.setError("Password should contain 8 characters!");
                 editPassword.requestFocus();
                 return;
             }
