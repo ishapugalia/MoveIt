@@ -8,20 +8,30 @@
     tools:context=".Options"
     >
 
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:textAlignment="viewStart"
+        android:textColor="#2D3231"
+        android:textSize="30sp"
+        android:textStyle="italic" />
+
     <EditText
         android:id="@+id/click"
         android:layout_width="wrap_content"
         android:layout_height="58dp"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="40dp"
-        android:background="@color/colorAccent"
+        android:background="#FFFFFF"
         android:clickable="false"
         android:editable="false"
         android:ems="10"
         android:fontFamily="@font/mukta_vaani_medium"
         android:inputType="textPersonName"
         android:singleLine="false"
-        android:text="Click to Select !"
+        android:text="You are here for?"
         android:textAlignment="center"
         android:textSize="30sp"
         android:visibility="visible"
@@ -57,8 +67,10 @@
             android:layout_marginTop="20px"
             android:layout_marginBottom="20px"
             android:background="#000000"
+            android:fontFamily="sans-serif-medium"
             android:text="Check Status"
             android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -80,8 +92,8 @@
             android:id="@+id/imageView2"
             android:layout_width="304dp"
             android:layout_height="250dp"
-            android:layout_marginLeft="100px"
-            android:layout_marginTop="100px"
+            android:layout_marginLeft="120px"
+            android:layout_marginTop="60px"
             app:srcCompat="@drawable/warehouse"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="176dp" />
