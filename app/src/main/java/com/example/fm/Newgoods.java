@@ -18,6 +18,7 @@ public class Newgoods extends AppCompatActivity {
 
     //Firebase
     private FirebaseAuth mAuth;
+    private FirebaseFirestore firestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class Newgoods extends AppCompatActivity {
 
         //Instance linking
         mAuth = FirebaseAuth.getInstance();
-        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+        firestore = FirebaseFirestore.getInstance();
 
     }
 
@@ -60,7 +61,7 @@ public class Newgoods extends AppCompatActivity {
         }
 
         ownerid = mAuth.getCurrentUser().getUid();
-        DocumentReference documentReference = firestore.collection("owners").document(ownerid).collection("Goods");
+        DocumentReference documentReference = firestore.collection("owners").document(ownerid).collection("Goods").add();
 
 
 
