@@ -3,6 +3,7 @@ package com.example.fm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,7 +40,7 @@ public class Newgoods extends AppCompatActivity {
          colref = firestore.collection("owners");
     }
 
-    public void addGoods(){
+    public void addGoods(View view){
         String productName,type;
         int pieces,boxes;
         double weight;
@@ -64,7 +65,7 @@ public class Newgoods extends AppCompatActivity {
         ownerid = mAuth.getCurrentUser().getUid();
 
          Goods goods= new Goods(productName,type,pieces,boxes,weight);
-        colref.document("QKvg65oHSJP6POgdEBnXEjvQZhu2").collection("Goods").add(goods);
+        colref.document(ownerid).collection("Goods").add(goods);
 
 
 
