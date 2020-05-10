@@ -134,6 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
         android:background="#000"
+        android:onClick="addGoods"
         android:text="ADD"
         android:textColor="#fff" />
 
