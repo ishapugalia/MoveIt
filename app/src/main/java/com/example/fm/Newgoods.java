@@ -2,6 +2,7 @@ package com.example.fm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -93,7 +94,7 @@ public class Newgoods extends AppCompatActivity {
             }
         });
 
-
+         startActivity(new Intent(Newgoods.this,Options.class));
 
     }
 }
