@@ -2,6 +2,7 @@ package com.example.fm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -62,7 +63,8 @@ public class Newgoods extends AppCompatActivity {
         boxes = Integer.parseInt(numofB.getEditText().getText().toString().trim());
         weight = Double.parseDouble(weight1.getEditText().getText().toString().trim());
 
-        /*if (productName.isEmpty()) {
+
+        if (productName.isEmpty()) {
             prodname.setError("Name is required!");
             prodname.requestFocus();
             return;
@@ -71,13 +73,28 @@ public class Newgoods extends AppCompatActivity {
             typeof.setError("Type is required!");
             typeof.requestFocus();
             return;
-        }*/
+        }
+        if(pieces==0){
+            numofP.setError("No. of Pieces must be more than 0");
+            numofP.requestFocus();
+            return;
+        }
+        if(boxes==0){
+            numofB.setError("No. of Boxes must be more than 0");
+            numofB.requestFocus();
+            return;
+        }
 
         ownerid = mAuth.getCurrentUser().getUid();
         final Goods newg= new Goods(productName,type,pieces,boxes,weight,fragile);
-        colref.document(ownerid).collection("Goods").add(newg);
+        colref.document(ownerid).collection("Goods").add(newg).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Toast.makeText(getApplicationContext(), "Added Successfully!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-
+         startActivity(new Intent(Newgoods.this,Options.class));
 
     }
 }

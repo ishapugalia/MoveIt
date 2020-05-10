@@ -22,7 +22,7 @@ public class Goods {
         this.pieces = pieces;
         this.weight = weight;
         this.fragile = fragile;
-
+         this.type=type;
 
     }
      @Exclude
