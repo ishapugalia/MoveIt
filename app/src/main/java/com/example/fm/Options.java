@@ -22,7 +22,7 @@ public class Options extends AppCompatActivity {
     private FirebaseAuth mAuth;
     String ownerid;
     TextView welcome;
-    Button addfreight;
+    Button addfreight,goList;
      private CollectionReference colref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,10 @@ public class Options extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         final FirebaseFirestore fstore= FirebaseFirestore.getInstance();
         addfreight= findViewById(R.id.addfrieght);
+        goList = findViewById(R.id.listofitems);
+
         ownerid= mAuth.getCurrentUser().getUid();
+
         final DocumentReference documentReference = fstore.collection("owners").document(ownerid);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
@@ -40,11 +43,21 @@ public class Options extends AppCompatActivity {
                 welcome.setText("Welcome ! "+documentSnapshot.getString("uname"));
             }
         });
+
+
         addfreight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Options.this,Newgoods.class));
             }
         });
+
+        goList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Options.this,Listgoods.class));
+            }
+        });
+
     }
 }
