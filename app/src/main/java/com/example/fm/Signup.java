@@ -32,12 +32,12 @@ public class Signup extends AppCompatActivity {
     //Variables
     TextInputLayout editName,editUsername,editEmail,editPhnumber,editPassword;
     Button register,login;
-     String ownerid;
-     public static final String TAG ="TAG";
+    String ownerid;
+    public static final String TAG ="TAG";
+
     //Firebase
     private FirebaseAuth mAuth;
-    //FirebaseDatabase rootNode;
-    //DatabaseReference reference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +56,6 @@ public class Signup extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         final FirebaseFirestore fstore= FirebaseFirestore.getInstance();
 
-       // register.setOnClickListener((View.OnClickListener) this);
-        //UserHelperClass helperClass = new UserHelperClass(name,username,email,phone,password);
-            //reference.child(username).setValue(helperClass));
-
-           /* final String name = editName.getEditText().getText().toString().trim();
-            final String username = editUsername.getEditText().getText().toString().trim();
-            final String email = editEmail.getEditText().getText().toString().trim();
-            final String phone = editPhnumber.getEditText().getText().toString().trim();
-            String password = editPassword.getEditText().getText().toString().trim();*/
     register.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
