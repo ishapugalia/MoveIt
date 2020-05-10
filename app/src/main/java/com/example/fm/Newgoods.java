@@ -74,7 +74,7 @@ public class Newgoods extends AppCompatActivity {
              @Override
              public void onClick(View v) {
                  Goods goods= new Goods(productName,type,pieces,boxes,weight,fragile);
-                 colref.document("ownerid").collection("Goods").add(goods);
+                 colref.document(ownerid).collection("Goods").add(goods);
 
              }
          });
