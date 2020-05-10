@@ -115,10 +115,12 @@ public class Signup extends AppCompatActivity {
                             }
                         });
                         startActivity(new Intent(Signup.this, Options.class));
+                        finish();
                     } else {
 
                         if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                             Toast.makeText(getApplicationContext(), "Account already exists!", Toast.LENGTH_SHORT).show();
+
                         } else {
                             Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
