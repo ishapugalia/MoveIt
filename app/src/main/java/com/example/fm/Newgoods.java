@@ -73,8 +73,8 @@ public class Newgoods extends AppCompatActivity {
          register.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 Goods goods= new Goods(productName,type,pieces,boxes,weight,fragile);
-                 colref.document(ownerid).collection("Goods").add(goods);
+                 Goods newg= new Goods(productName,type,pieces,boxes,weight,fragile);
+                 colref.document(ownerid).collection("Goods").add(newg);
 
              }
          });
