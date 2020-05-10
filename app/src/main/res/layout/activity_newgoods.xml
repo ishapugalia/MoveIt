@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Newgoods"
+    tools:context=".Signup"
     android:orientation="vertical"
     android:padding="18dp"
     android:background="#60FBFF">
@@ -117,13 +117,13 @@
 
         <!--Fragle or not -->
         <Switch
-            android:id="@+id/frag"
+            android:id="@+id/fragile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Fragile?"
             android:textSize="15sp"
             android:textColor="@color/cardview_dark_background"
-            android:layout_marginRight="275dp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 
