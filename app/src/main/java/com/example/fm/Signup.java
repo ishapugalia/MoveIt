@@ -105,8 +105,6 @@ public class Signup extends AppCompatActivity {
                                 Log.d(TAG, "owner profile is created!" + ownerid);
                             }
                         });
-                        startActivity(new Intent(Signup.this, Options.class));
-                        finish();
                     } else {
 
                         if (task.getException() instanceof FirebaseAuthUserCollisionException) {
