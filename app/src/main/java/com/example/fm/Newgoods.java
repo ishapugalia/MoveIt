@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -13,12 +14,16 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class Newgoods extends AppCompatActivity {
 
     //Variables
     TextInputLayout prodname,numofP,numofB,typeof,weight1;
     String ownerid;
+    String goodsid;
      boolean fragile;
 
      Button register;
@@ -56,7 +61,7 @@ public class Newgoods extends AppCompatActivity {
         boxes = Integer.parseInt(numofB.getEditText().getText().toString().trim());
         weight = Double.parseDouble(weight1.getEditText().getText().toString().trim());
 
-        if (productName.isEmpty()) {
+        /*if (productName.isEmpty()) {
             prodname.setError("Name is required!");
             prodname.requestFocus();
             return;
@@ -65,11 +70,13 @@ public class Newgoods extends AppCompatActivity {
             typeof.setError("Type is required!");
             typeof.requestFocus();
             return;
-        }
+        }*/
 
         ownerid = mAuth.getCurrentUser().getUid();
-        Goods newg= new Goods(productName,type,pieces,boxes,weight,fragile);
+        final Goods newg= new Goods(productName,type,pieces,boxes,weight,fragile);
         colref.document(ownerid).collection("Goods").add(newg);
+
+
 
     }
 }

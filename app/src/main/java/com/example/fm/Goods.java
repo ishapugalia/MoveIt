@@ -1,5 +1,7 @@
 package com.example.fm;
 
+import com.google.firebase.database.Exclude;
+
 public class Goods {
     String productName;
     String type;
@@ -10,11 +12,6 @@ public class Goods {
 
 
     Goods( ){
-        this.productName = "";
-        this.boxes = 0;
-        this.pieces = 0;
-        this.weight = 0.00;
-        this.fragile = false;
 
     }
     Goods(String productName,String type,int pieces,int boxes,Double weight,boolean fragile){
@@ -25,5 +22,29 @@ public class Goods {
         this.fragile = fragile;
 
 
+    }
+     @Exclude
+    public String getProductName() {
+        return productName;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getPieces() {
+        return pieces;
+    }
+
+    public int getBoxes() {
+        return boxes;
+    }
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public boolean isFragile() {
+        return fragile;
     }
 }
