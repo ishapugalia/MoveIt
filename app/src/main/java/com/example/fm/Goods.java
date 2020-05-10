@@ -9,7 +9,7 @@ import android.view.View;
 
 public class Goods extends AppCompatActivity {
 
-    public Goods(String productName, String type, int pieces, int boxes, double weight) {
+    public Goods(String productName, String type, int pieces, int boxes, double weight,boolean fragile) {
     }
 
     @Override
