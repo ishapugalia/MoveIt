@@ -8,15 +8,6 @@
     tools:context=".Options"
     >
 
-    <TextView
-        android:id="@+id/nameview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="6dp"
-        />
-
     <EditText
         android:id="@+id/click"
         android:layout_width="wrap_content"
@@ -46,7 +37,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/listofitems"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#000000"
@@ -59,7 +50,7 @@
             tools:layout_editor_absoluteY="176dp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/checkstatus"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -73,7 +64,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/addfrieght"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#000000"
