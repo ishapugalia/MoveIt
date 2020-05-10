@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -19,7 +20,7 @@ public class Newgoods extends AppCompatActivity {
     //Firebase
     private FirebaseAuth mAuth;
     private FirebaseFirestore firestore;
-
+    private CollectionReference colref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +36,7 @@ public class Newgoods extends AppCompatActivity {
         //Instance linking
         mAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
-
+         colref = firestore.collection("owners");
     }
 
     public void addGoods(){
@@ -61,7 +62,9 @@ public class Newgoods extends AppCompatActivity {
         }
 
         ownerid = mAuth.getCurrentUser().getUid();
-        DocumentReference documentReference = firestore.collection("owners").document(ownerid).collection("Goods").add();
+
+         Goods goods= new Goods(productName,type,pieces,boxes,weight);
+        colref.document("QKvg65oHSJP6POgdEBnXEjvQZhu2").collection("Goods").add(goods);
 
 
 
