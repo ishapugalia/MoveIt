@@ -30,7 +30,7 @@ public class Options extends AppCompatActivity {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                welcome.setText("Welcome ! "+documentSnapshot.getString("uname"));
+                welcome.setText("Welcome ! "+documentSnapshot.getString("uname"));//Welcome ! uname
             }
         });
     }
