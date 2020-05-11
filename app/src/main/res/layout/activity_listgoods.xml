@@ -7,80 +7,101 @@
     android:background="#60FBFF"
     tools:context=".Listgoods">
 
-    <TextView
-        android:id="@+id/Rename1"
-        android:layout_width="50dp"
+
+    <EditText
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:text="NAME"
-        android:textColor="#121111"
-        android:textSize="17sp"
-        android:textStyle="bold|italic"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Swipe to Delete !"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/type1"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:ellipsize="end"
-        android:text="TYPE"
-        android:textColor="#121111"
-        android:textSize="17sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toEndOf="@+id/Rename1" />
+        <TextView
+            android:id="@+id/Rename1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="NAME"
+            android:textColor="#121111"
+            android:textSize="17sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintTop_toBottomOf="@id/swipe"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/pieces1"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="PIECES"
-        android:textColor="#121111"
-        android:textSize="17sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toEndOf="@+id/type1" />
+        <TextView
+            android:id="@+id/type1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:text="TYPE"
+            android:textColor="#121111"
+            android:textSize="17sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintTop_toBottomOf="@id/swipe"
+            app:layout_constraintStart_toEndOf="@+id/Rename1" />
 
-    <TextView
-        android:id="@+id/boxes1"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:ellipsize="end"
-        android:text="BOXES"
-        android:textColor="#121111"
-        android:textSize="17sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toEndOf="@+id/pieces1" />
+        <TextView
+            android:id="@+id/pieces1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="PIECES"
+            android:textColor="#121111"
+            android:textSize="17sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintTop_toBottomOf="@id/swipe"
+            app:layout_constraintStart_toEndOf="@+id/type1" />
 
-    <TextView
-        android:id="@+id/weight1"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="MASS(g)"
-        android:textColor="#121111"
-        android:textSize="17sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toEndOf="@+id/boxes1" />
+        <TextView
+            android:id="@+id/boxes1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:text="BOXES"
+            android:textColor="#121111"
+            android:textSize="17sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintTop_toBottomOf="@id/swipe"
+            app:layout_constraintStart_toEndOf="@+id/pieces1" />
 
-    <TextView
-        android:id="@+id/fragile1"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:ellipsize="end"
-        android:text="FRAGILE"
-        android:textColor="#121111"
-        android:textSize="17sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toEndOf="@+id/weight1" />
+        <TextView
+            android:id="@+id/weight1"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="MASS(g)"
+            android:textColor="#121111"
+            android:textSize="17sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintTop_toBottomOf="@id/swipe"
+            app:layout_constraintStart_toEndOf="@+id/boxes1" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/firestore_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
-        tools:layout_editor_absoluteY="50dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/fragile1"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:text="FRAGILE"
+            android:textColor="#121111"
+            android:textSize="17sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintTop_toBottomOf="@id/swipe"
+            app:layout_constraintStart_toEndOf="@+id/weight1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/firestore_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="70dp"
+            tools:layout_editor_absoluteY="50dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
