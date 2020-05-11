@@ -95,6 +95,13 @@ public class Newgoods extends AppCompatActivity {
             public void onSuccess(DocumentReference documentReference) {
                 progressBar.setVisibility(View.INVISIBLE);
                 Toast.makeText(getApplicationContext(), "Added Successfully!", Toast.LENGTH_SHORT).show();
+                prodname.getEditText().setText("");
+                typeof.getEditText().setText("");
+                numofB.getEditText().setText("");
+                numofP.getEditText().setText("");
+                weight1.getEditText().setText("");
+                fragile.setChecked(false);
+
 
             }
         });
