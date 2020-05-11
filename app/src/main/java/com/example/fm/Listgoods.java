@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,6 +46,7 @@ public class Listgoods extends AppCompatActivity {
 
         //Query
         Query query = colref.document(ownerid).collection("Goods");
+
         //RecyclerOptions
         FirestoreRecyclerOptions<Goodsmodel> options = new FirestoreRecyclerOptions.Builder<Goodsmodel>()
                 .setQuery(query,Goodsmodel.class).build();
@@ -56,13 +58,14 @@ public class Listgoods extends AppCompatActivity {
                 return new Goodsviewholder(view);
             }
 
+            @SuppressLint("SetTextI18n")
             @Override
             protected void onBindViewHolder(@NonNull Goodsviewholder holder, int position, @NonNull Goodsmodel model) {
                 holder.name.setText(model.getPname());
                 holder.type.setText(model.getType());
-                holder.nump.setText(model.getPieces());
-                holder.numb.setText(model.getBoxes());
-               // holder.frag.setText(model.isFragile());
+               holder.nump.setText(model.getPieces()+" ");
+                holder.numb.setText(model.getBoxes()+" ");
+                holder.weight.setText((int) model.getWeight()+"");
             }
         };
 
@@ -77,16 +80,16 @@ public class Listgoods extends AppCompatActivity {
 
     private class Goodsviewholder extends  RecyclerView.ViewHolder{
 
-        private TextView name,type,nump,numb,frag;
+        private TextView name,type,nump,numb,weight;
 
         public Goodsviewholder(@NonNull View itemView) {
             super(itemView);
 
-            name = itemView.findViewById(R.id.name);
+            name = itemView.findViewById(R.id.Rename);
             type = itemView.findViewById(R.id.type);
-            nump = itemView.findViewById(R.id.pieces);
-            numb = itemView.findViewById(R.id.boxes);
-           // frag = itemView.findViewById(R.id.fragile);
+           nump = itemView.findViewById(R.id.pieces);
+           numb = itemView.findViewById(R.id.boxes);
+            weight = itemView.findViewById(R.id.weight);
 
         }
     }

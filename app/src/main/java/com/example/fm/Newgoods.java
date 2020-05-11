@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
@@ -16,9 +15,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class Newgoods extends AppCompatActivity {
 
@@ -40,7 +36,7 @@ public class Newgoods extends AppCompatActivity {
 
         //Hooks
         prodname = findViewById(R.id.pname);
-        numofP = findViewById(R.id.nump);
+        numofP = findViewById(R.id.pieces);
         numofB = findViewById(R.id.numb);
         typeof = findViewById(R.id.typeof);
         weight1 = findViewById(R.id.weight);

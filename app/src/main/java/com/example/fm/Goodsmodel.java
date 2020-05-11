@@ -6,19 +6,19 @@ public class Goodsmodel {
     private int pieces;
     private  int boxes;
     private double weight;
-    private boolean fragile;
+    //private boolean fragile;
 
     public Goodsmodel(){
 
     }
 
-    public Goodsmodel(String pname,String type,int pieces,int boxes,double weight,boolean fragile){
+    public Goodsmodel(String pname,String type,int pieces,int boxes,int weight){
         this.pname = pname;
         this.type = type;
         this.pieces = pieces;
         this.boxes = boxes;
         this.weight = weight;
-        this.fragile = fragile;
+      //  this.fragile = fragile;
     }
 
     public String getPname() {
@@ -37,7 +37,7 @@ public class Goodsmodel {
         this.type = type;
     }
 
-    public int getPieces() {
+   public int getPieces() {
         return pieces;
     }
 
@@ -61,7 +61,7 @@ public class Goodsmodel {
         this.weight = weight;
     }
 
-    public boolean isFragile() {
+    /*public boolean isFragile() {
         if(this.fragile==true)
         return true;
         else
@@ -70,5 +70,5 @@ public class Goodsmodel {
 
     public void setFragile(boolean fragile) {
         this.fragile = fragile;
-    }
+    }*/
 }

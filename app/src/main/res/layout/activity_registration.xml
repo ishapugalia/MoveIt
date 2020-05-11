@@ -42,7 +42,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/name"
+            android:id="@+id/Rename"
             android:hint="Full Name"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 

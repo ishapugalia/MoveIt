@@ -58,7 +58,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/nump"
+            android:id="@+id/pieces"
             android:hint="Number of pieces"
             android:transitionName="username_trans"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">

@@ -4,62 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp">
+    android:padding="15dp"
+    android:background="@color/cardview_light_background">
 
     <TextView
-        android:id="@+id/type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/name"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="74dp"
-        android:layout_marginTop="29dp"
+        android:id="@+id/Rename"
+        android:layout_width="139dp"
+        android:layout_height="24dp"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="74dp"
-        android:layout_marginTop="20dp"
-        android:text="TextView" />
+        android:id="@+id/type"
+        android:layout_width="76dp"
+        android:layout_height="29dp"
+        android:text="TextView"
+        android:textSize="17sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rename" />
 
     <TextView
         android:id="@+id/pieces"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="97dp"
-        android:text="TextView" />
+        android:layout_width="79dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="40dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/type" />
 
     <TextView
         android:id="@+id/boxes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="97dp"
-        android:layout_marginEnd="25dp"
-        android:layout_toStartOf="@+id/fragile"
-        android:layout_toEndOf="@+id/pieces"
-        android:text="TextView" />
+        android:layout_width="88dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="32dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pieces" />
 
     <TextView
-        android:id="@+id/fragile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="97dp"
-        android:layout_marginEnd="24dp"
-        android:text="TextView" />
-
+        android:id="@+id/weight"
+        android:layout_width="88dp"
+        android:layout_height="29dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/boxes" />
 </androidx.constraintlayout.widget.ConstraintLayout>
