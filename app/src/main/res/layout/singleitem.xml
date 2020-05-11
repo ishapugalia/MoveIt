@@ -1,56 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="15dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="2dp"
     android:background="@color/cardview_light_background">
 
     <TextView
         android:id="@+id/Rename"
-        android:layout_width="139dp"
-        android:layout_height="24dp"
-        android:text="TextView"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="Textview"
+        android:textSize="17sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/type"
-        android:layout_width="76dp"
-        android:layout_height="29dp"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ellipsize="end"
         android:text="TextView"
         android:textSize="17sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Rename" />
+        app:layout_constraintStart_toEndOf="@+id/Rename" />
 
     <TextView
         android:id="@+id/pieces"
-        android:layout_width="79dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="40dp"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:text="TextView"
+        android:textSize="17sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/type" />
 
     <TextView
         android:id="@+id/boxes"
-        android:layout_width="88dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ellipsize="end"
         android:text="TextView"
+        android:textSize="17sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pieces" />
 
     <TextView
         android:id="@+id/weight"
-        android:layout_width="88dp"
-        android:layout_height="29dp"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:text="TextView"
+        android:textSize="17sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/boxes" />
+
+    <TextView
+        android:id="@+id/fragile"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="TextView"
+        android:textSize="17sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/weight" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

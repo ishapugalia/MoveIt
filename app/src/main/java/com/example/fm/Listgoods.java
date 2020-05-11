@@ -1,16 +1,16 @@
 package com.example.fm;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -66,6 +66,7 @@ public class Listgoods extends AppCompatActivity {
                holder.nump.setText(model.getPieces()+" ");
                 holder.numb.setText(model.getBoxes()+" ");
                 holder.weight.setText((int) model.getWeight()+"");
+                holder.fragile.setText(String.valueOf(model.isFragile()));
             }
         };
 
@@ -80,7 +81,7 @@ public class Listgoods extends AppCompatActivity {
 
     private class Goodsviewholder extends  RecyclerView.ViewHolder{
 
-        private TextView name,type,nump,numb,weight;
+        private TextView name,type,nump,numb,weight,fragile;
 
         public Goodsviewholder(@NonNull View itemView) {
             super(itemView);
@@ -90,6 +91,7 @@ public class Listgoods extends AppCompatActivity {
            nump = itemView.findViewById(R.id.pieces);
            numb = itemView.findViewById(R.id.boxes);
             weight = itemView.findViewById(R.id.weight);
+            fragile=itemView.findViewById((R.id.fragile));
 
         }
     }
