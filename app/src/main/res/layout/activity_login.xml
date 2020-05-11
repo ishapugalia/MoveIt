@@ -36,48 +36,49 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="395dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/username"
-            android:hint="Username/Email"
-            android:transitionName="username_trans"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:id="@+id/password"
-            app:passwordToggleEnabled="true"
-            android:transitionName="password_trans"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:hint="Username/Email"
+            android:transitionName="username_trans">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
+                android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:transitionName="password_trans"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:background="#00000000"
-            android:text="Forgot password?"
             android:layout_gravity="right"
-            android:layout_margin="5dp"/>
+            android:layout_margin="5dp"
+            android:background="#00000000"
+            android:text="Forgot password?" />
 
         <Button
             android:id="@+id/login"
@@ -91,21 +92,26 @@
             android:textColor="#fff"
             android:transitionName="button_trans" />
 
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:visibility="invisible" />
+
         <Button
             android:id="@+id/signup"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
             android:background="#00000000"
             android:text="New User? Register Here!"
-            android:layout_gravity="right"
-            android:layout_margin="30dp"
-            android:transitionName="signup_trans"/>
-
+            android:transitionName="signup_trans" />
 
 
     </LinearLayout>
-
-
 
 
 

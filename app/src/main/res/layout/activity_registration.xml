@@ -128,11 +128,19 @@
         android:text="Register"
         android:textColor="#fff" />
 
+    <ProgressBar
+        android:id="@+id/progressbar2"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:visibility="invisible"/>
+
     <Button
         android:id="@+id/haveacc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="35dp"
+        android:layout_margin="5dp"
         android:background="#00000000"
         android:text="Already have an account? Log In!"
         android:transitionName="signup_trans" />

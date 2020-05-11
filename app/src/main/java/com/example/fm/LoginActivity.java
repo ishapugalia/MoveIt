@@ -11,6 +11,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     ImageView image;
     TextView logoText,sloganText;
     TextInputLayout username,passwd;
+    ProgressBar progressBar;
 
     //Firebase
     FirebaseAuth mAuth;
@@ -45,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         sloganText = findViewById(R.id.slogan_name);
         username = findViewById(R.id.username);
         passwd = findViewById(R.id.password);
+        progressBar = findViewById(R.id.progressbar);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -101,19 +104,26 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
+        progressBar.setVisibility(View.VISIBLE);
+
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                if(task.isSuccessful()){
+                   progressBar.setVisibility(View.INVISIBLE);
                    startActivity(new Intent(LoginActivity.this,Options.class));
+                   username.getEditText().setText("");
+                   passwd.getEditText().setText("");
 
                }
                else{
                    Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-
                }
             }
         });
+
+
+
 
 
 

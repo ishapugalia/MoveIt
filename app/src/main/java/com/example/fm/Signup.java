@@ -9,6 +9,7 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,6 +30,7 @@ public class Signup extends AppCompatActivity {
     //Variables
     TextInputLayout editName,editUsername,editEmail,editPhnumber,editPassword;
     Button register,login;
+    ProgressBar progressBar;
     String ownerid;
     public static final String TAG ="TAG";
 
@@ -49,6 +51,7 @@ public class Signup extends AppCompatActivity {
         editPhnumber = findViewById(R.id.phone);
         register = findViewById(R.id.register);
         login = findViewById(R.id.haveacc);
+        progressBar = findViewById(R.id.progressbar2);
 
         mAuth = FirebaseAuth.getInstance();
         final FirebaseFirestore fstore= FirebaseFirestore.getInstance();
@@ -83,11 +86,13 @@ public class Signup extends AppCompatActivity {
                 return;
             }
 
+            progressBar.setVisibility(View.VISIBLE);
 
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
+                        progressBar.setVisibility(View.INVISIBLE);
                         Toast.makeText(getApplicationContext(), "User Registered Successfully", Toast.LENGTH_SHORT).show();
                         ownerid = mAuth.getCurrentUser().getUid();
                         DocumentReference documentReference = fstore.collection("owners").document(ownerid);

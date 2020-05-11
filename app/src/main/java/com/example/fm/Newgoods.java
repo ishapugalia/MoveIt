@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class Newgoods extends AppCompatActivity {
     String ownerid;
     String goodsid;
     Switch fragile;
+    ProgressBar progressBar;
 
     Button register;
     //Firebase
@@ -42,6 +44,8 @@ public class Newgoods extends AppCompatActivity {
         weight1 = findViewById(R.id.weight);
          fragile=findViewById(R.id.fragility);
          register=findViewById(R.id.register);
+         progressBar = findViewById(R.id.progressbar3);
+
         //Instance linking
         mAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
@@ -82,16 +86,20 @@ public class Newgoods extends AppCompatActivity {
             return;
         }
 
+        progressBar.setVisibility(View.VISIBLE);
+
         ownerid = mAuth.getCurrentUser().getUid();
         final Goodsmodel newg= new Goodsmodel(productName,type,pieces,boxes,weight,fragile1);
         colref.document(ownerid).collection("Goods").add(newg).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
+                progressBar.setVisibility(View.INVISIBLE);
                 Toast.makeText(getApplicationContext(), "Added Successfully!", Toast.LENGTH_SHORT).show();
+
             }
         });
 
-         startActivity(new Intent(Newgoods.this,Options.class));
+        startActivity(new Intent(Newgoods.this,Options.class));
 
     }
 }
