@@ -22,7 +22,7 @@ public class Newgoods extends AppCompatActivity {
     TextInputLayout prodname,numofP,numofB,typeof,weight1;
     String ownerid;
     String goodsid;
-    boolean fragile;
+    Switch fragile;
 
     Button register;
     //Firebase
@@ -40,7 +40,7 @@ public class Newgoods extends AppCompatActivity {
         numofB = findViewById(R.id.numb);
         typeof = findViewById(R.id.typeof);
         weight1 = findViewById(R.id.weight);
-         fragile= ((Switch)findViewById(R.id.fragile)).isChecked();
+         fragile=findViewById(R.id.fragility);
          register=findViewById(R.id.register);
         //Instance linking
         mAuth = FirebaseAuth.getInstance();
@@ -52,13 +52,14 @@ public class Newgoods extends AppCompatActivity {
         final String productName,type;
         final int pieces,boxes;
         final int weight;
+        final boolean fragile1;
 
         productName = prodname.getEditText().getText().toString().trim();
         type = typeof.getEditText().getText().toString().trim();
         pieces = Integer.parseInt(numofP.getEditText().getText().toString().trim());
         boxes = Integer.parseInt(numofB.getEditText().getText().toString().trim());
         weight = Integer.parseInt(weight1.getEditText().getText().toString().trim());
-
+        fragile1 = fragile.isChecked();
 
         if (productName.isEmpty()) {
             prodname.setError("Name is required!");
@@ -82,7 +83,7 @@ public class Newgoods extends AppCompatActivity {
         }
 
         ownerid = mAuth.getCurrentUser().getUid();
-        final Goodsmodel newg= new Goodsmodel(productName,type,pieces,boxes,weight,fragile);
+        final Goodsmodel newg= new Goodsmodel(productName,type,pieces,boxes,weight,fragile1);
         colref.document(ownerid).collection("Goods").add(newg).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {

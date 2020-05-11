@@ -91,7 +91,7 @@ public class Listgoods extends AppCompatActivity {
            nump = itemView.findViewById(R.id.pieces);
            numb = itemView.findViewById(R.id.boxes);
             weight = itemView.findViewById(R.id.weight);
-            fragile=itemView.findViewById((R.id.fragile));
+            fragile=itemView.findViewById((R.id.fragility));
 
         }
     }
