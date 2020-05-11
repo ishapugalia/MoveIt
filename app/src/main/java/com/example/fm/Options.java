@@ -1,15 +1,16 @@
 package com.example.fm;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Path;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
@@ -22,6 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 public class Options extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    SharedPreferences sharedPreferences;
 
     //Variables
     String ownerid;
@@ -33,6 +35,7 @@ public class Options extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
+        sharedPreferences = getSharedPreferences(LoginActivity.Autologin, Context.MODE_PRIVATE);
 
         //Hooks
         welcome = findViewById(R.id.welcome);
@@ -74,9 +77,19 @@ public class Options extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mAuth.getInstance().signOut();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("key", 0);
+                editor.apply();
+
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
 
+    }
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 }
