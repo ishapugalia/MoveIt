@@ -1,13 +1,13 @@
 package com.example.fm;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
@@ -51,13 +51,13 @@ public class Newgoods extends AppCompatActivity {
     public void addGoods(View view){
         final String productName,type;
         final int pieces,boxes;
-        final double weight;
+        final int weight;
 
         productName = prodname.getEditText().getText().toString().trim();
         type = typeof.getEditText().getText().toString().trim();
         pieces = Integer.parseInt(numofP.getEditText().getText().toString().trim());
         boxes = Integer.parseInt(numofB.getEditText().getText().toString().trim());
-        weight = Double.parseDouble(weight1.getEditText().getText().toString().trim());
+        weight = Integer.parseInt(weight1.getEditText().getText().toString().trim());
 
 
         if (productName.isEmpty()) {
@@ -82,7 +82,7 @@ public class Newgoods extends AppCompatActivity {
         }
 
         ownerid = mAuth.getCurrentUser().getUid();
-        final Goods newg= new Goods(productName,type,pieces,boxes,weight,fragile);
+        final Goodsmodel newg= new Goodsmodel(productName,type,pieces,boxes,weight,fragile);
         colref.document(ownerid).collection("Goods").add(newg).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
