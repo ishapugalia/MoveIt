@@ -89,13 +89,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/phone"
-            android:hint="Phone Number"
+            android:hint="10 digit Phone Number"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:maxLength="10"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/password"
-            android:hint="Password"
+            android:hint="Password with 8 characters"
             app:passwordToggleEnabled="true"
             android:transitionName="password_trans"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -112,7 +114,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"
+                android:maxLength="8"/>
 
         </com.google.android.material.textfield.TextInputLayout>
         
